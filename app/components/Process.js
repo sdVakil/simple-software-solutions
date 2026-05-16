@@ -25,30 +25,30 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="relative scroll-mt-20 overflow-hidden border-b border-slate-200/80 bg-slate-100/80 py-20 dark:border-slate-800/80 dark:bg-slate-950/80 sm:py-24"
+      className="relative scroll-mt-20 overflow-hidden border-b border-slate-200/80 bg-slate-100/80 py-16 dark:border-slate-800/80 dark:bg-slate-950/80 sm:py-20 lg:py-24 2xl:py-28"
     >
       <div
         className="bg-tech-grid pointer-events-none absolute inset-0 opacity-50 dark:opacity-30"
         aria-hidden
       />
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="page-container relative">
         <div className="max-w-2xl">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             How we work
           </p>
-          <h2 className="font-display mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-display mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
             Working software every week. No surprises.
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-muted">
+          <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
             Borrowing the rhythm that keeps complex builds honest—adapted for
             early-stage speed and runway reality.
           </p>
         </div>
-        <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-10 grid gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {steps.map((step) => (
             <li
               key={step.n}
-              className="rounded-xl border border-slate-200/90 bg-surface p-6 shadow-sm dark:border-slate-700/80 dark:bg-slate-900/50"
+              className="rounded-xl border border-slate-200/90 bg-surface p-5 shadow-sm sm:p-6 dark:border-slate-700/80 dark:bg-slate-900/50"
             >
               <span className="font-mono text-xs font-bold text-accent">
                 {step.n}

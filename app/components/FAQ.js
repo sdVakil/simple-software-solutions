@@ -25,16 +25,16 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="scroll-mt-20 border-b border-slate-200/80 py-20 dark:border-slate-800/80 sm:py-24"
+      className="scroll-mt-20 border-b border-slate-200/80 py-16 dark:border-slate-800/80 sm:py-20 lg:py-24 2xl:py-28"
     >
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div className="page-container max-w-3xl">
         <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent">
           Common questions
         </p>
-        <h2 className="font-display mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h2 className="font-display mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
           Before you book the call.
         </h2>
-        <p className="mt-4 text-lg text-muted">
+        <p className="mt-4 text-base text-muted sm:text-lg">
           Straight answers—if we are not the right partner, we will say so.
         </p>
         <div className="mt-12 border-t border-slate-200 divide-y divide-slate-200 dark:border-slate-800 dark:divide-slate-800">
@@ -43,10 +43,10 @@ export default function FAQ() {
               key={item.q}
               className="group py-1 [&_summary::-webkit-details-marker]:hidden"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold text-foreground transition hover:text-accent">
-                <span>{item.q}</span>
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 py-4 text-left text-base font-semibold text-foreground transition hover:text-accent sm:items-center sm:text-lg">
+                <span className="min-w-0 pr-2">{item.q}</span>
                 <span
-                  className="faq-chevron font-mono text-lg text-accent"
+                  className="faq-chevron mt-0.5 shrink-0 font-mono text-lg text-accent sm:mt-0"
                   aria-hidden
                 >
                   ▸

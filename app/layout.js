@@ -13,6 +13,11 @@ const robotoMono = Roboto_Mono({
   weight: ["500", "600", "700"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata = {
   title: {
     default: "Simple Software Solutions | MVP Development for Startups",

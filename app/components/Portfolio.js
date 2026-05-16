@@ -26,35 +26,35 @@ export default function Portfolio() {
   return (
     <section
       id="work"
-      className="scroll-mt-20 border-b border-slate-200/80 py-20 dark:border-slate-800/80 sm:py-24"
+      className="scroll-mt-20 border-b border-slate-200/80 py-16 dark:border-slate-800/80 sm:py-20 lg:py-24 2xl:py-28"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="page-container">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent">
               Case studies
             </p>
-            <h2 className="font-display mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="font-display mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
               Selected work
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-muted">
+            <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
               Snapshots of the kind of MVPs we ship—names anonymized where
               needed. Each engagement focused on something customers could use,
               not a slide deck.
             </p>
           </div>
         </div>
-        <ul className="mt-14 grid gap-6 lg:grid-cols-3">
+        <ul className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <li
               key={project.name}
-              className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200/90 bg-gradient-to-b from-surface to-slate-50/80 p-8 shadow-sm transition hover:-translate-y-1 hover:border-accent/35 hover:shadow-xl hover:shadow-accent/10 dark:border-slate-700/80 dark:from-slate-900/80 dark:to-slate-950/80 dark:hover:shadow-accent/15"
+              className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200/90 bg-gradient-to-b from-surface to-slate-50/80 p-6 shadow-sm transition hover:-translate-y-1 hover:border-accent/35 hover:shadow-xl hover:shadow-accent/10 sm:p-8 dark:border-slate-700/80 dark:from-slate-900/80 dark:to-slate-950/80 dark:hover:shadow-accent/15"
             >
               <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-accent/10 blur-2xl transition group-hover:bg-accent/20" />
               <p className="relative font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-accent">
                 {project.tag}
               </p>
-              <h3 className="font-display relative mt-3 text-2xl font-bold text-foreground">
+              <h3 className="font-display relative mt-3 text-xl font-bold text-foreground sm:text-2xl">
                 {project.name}
               </h3>
               <p className="relative mt-4 flex-1 leading-relaxed text-muted">

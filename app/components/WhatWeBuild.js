@@ -35,18 +35,18 @@ export default function WhatWeBuild() {
   return (
     <section
       id="build"
-      className="scroll-mt-20 border-b border-slate-200/80 bg-slate-100/80 py-20 dark:border-slate-800/80 dark:bg-slate-950/50 sm:py-24"
+      className="scroll-mt-20 border-b border-slate-200/80 bg-slate-100/80 py-16 dark:border-slate-800/80 dark:bg-slate-950/50 sm:py-20 lg:py-24 2xl:py-28"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="page-container">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent">
               What we build
             </p>
-            <h2 className="font-display mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="font-display mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
               MVPs that match how your startup actually runs.
             </h2>
-            <p className="mt-4 text-lg text-muted">
+            <p className="mt-4 text-base text-muted sm:text-lg">
               We don’t resell a platform. We build yours—scoped for runway, ready
               for real users.
             </p>
@@ -58,11 +58,11 @@ export default function WhatWeBuild() {
             All case studies →
           </Link>
         </div>
-        <ul className="mt-14 grid gap-6 md:grid-cols-2">
+        <ul className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-2">
           {cards.map((card) => (
             <li
               key={card.title}
-              className="group flex flex-col rounded-xl border border-slate-200/90 bg-surface p-8 shadow-sm transition hover:-translate-y-0.5 hover:border-accent/35 hover:shadow-lg dark:border-slate-700/80 dark:bg-slate-900/50"
+              className="group flex flex-col rounded-xl border border-slate-200/90 bg-surface p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-accent/35 hover:shadow-lg sm:p-8 dark:border-slate-700/80 dark:bg-slate-900/50"
             >
               <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-accent">
                 {card.eyebrow}

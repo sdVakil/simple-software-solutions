@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const nav = [
   { href: "#build", label: "What we build" },
@@ -9,19 +12,37 @@ const nav = [
 ];
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => {
+      if (media.matches) setMenuOpen(false);
+    };
+    media.addEventListener("change", closeOnDesktop);
+    return () => media.removeEventListener("change", closeOnDesktop);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-surface-elevated/80 shadow-sm shadow-slate-900/5 backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-950/70 dark:shadow-black/20">
-      <div className="mx-auto flex min-h-16 max-w-6xl flex-wrap items-center justify-between gap-y-3 px-4 py-3 sm:h-16 sm:flex-nowrap sm:py-0 sm:px-6 lg:px-8">
+      <div className="page-container flex h-14 items-center justify-between gap-3 sm:h-16">
         <Link
           href="/"
-          className="order-1 font-mono text-base font-bold tracking-tight text-foreground sm:text-lg"
+          className="shrink-0 font-mono text-sm font-bold tracking-tight text-foreground sm:text-lg"
+          onClick={() => setMenuOpen(false)}
         >
-          <span className="max-w-[12rem] leading-tight sm:max-w-none">
-            Simple <span className="text-accent">Softwares</span>
-          </span>
+          Simple <span className="text-accent">Softwares</span>
         </Link>
+
         <nav
-          className="order-3 flex w-full basis-full flex-wrap items-center justify-center gap-x-4 gap-y-1 font-mono text-[10px] font-medium uppercase tracking-widest text-muted sm:order-2 sm:flex-1 sm:basis-auto sm:gap-x-5 sm:px-2 sm:text-[11px] md:gap-x-6"
+          className="hidden items-center gap-x-5 font-mono text-[11px] font-medium uppercase tracking-widest text-muted md:flex lg:gap-x-6 lg:text-xs"
           aria-label="Primary"
         >
           {nav.map((item) => (
@@ -34,13 +55,77 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <Link
-          href="#contact"
-          className="order-2 inline-flex shrink-0 items-center justify-center rounded-lg bg-accent px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg shadow-accent/25 ring-1 ring-white/20 transition hover:bg-accent-hover hover:shadow-accent/40 sm:order-3 sm:px-4 sm:text-xs dark:ring-slate-950/30 dark:text-slate-950"
+
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <Link
+            href="#contact"
+            className="hidden items-center justify-center rounded-lg bg-accent px-4 py-2 font-mono text-xs font-semibold uppercase tracking-wide text-white shadow-lg shadow-accent/25 ring-1 ring-white/20 transition hover:bg-accent-hover hover:shadow-accent/40 sm:inline-flex dark:ring-slate-950/30 dark:text-slate-950"
+            onClick={() => setMenuOpen(false)}
+          >
+            Book a call
+          </Link>
+
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200/90 bg-surface text-foreground transition hover:border-accent/40 md:hidden dark:border-slate-700/80 dark:bg-slate-900/50"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className="sr-only">{menuOpen ? "Close" : "Menu"}</span>
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              aria-hidden
+            >
+              {menuOpen ? (
+                <>
+                  <path d="M6 6l12 12M18 6L6 18" />
+                </>
+              ) : (
+                <>
+                  <path d="M4 7h16M4 12h16M4 17h16" />
+                </>
+              )}
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-nav"
+        className={`border-t border-slate-200/80 bg-surface-elevated/95 backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-950/95 md:hidden ${
+          menuOpen ? "block" : "hidden"
+        }`}
+        aria-hidden={!menuOpen}
+      >
+        <nav
+          className="page-container flex flex-col gap-1 py-4"
+          aria-label="Mobile primary"
         >
-          <span className="sm:hidden">Call</span>
-          <span className="hidden sm:inline">Book a call</span>
-        </Link>
+          {nav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-lg px-3 py-3 font-mono text-sm font-medium uppercase tracking-widest text-muted transition hover:bg-slate-100/80 hover:text-accent dark:hover:bg-slate-800/80"
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <Link
+            href="#contact"
+            className="mt-2 inline-flex items-center justify-center rounded-lg bg-accent px-4 py-3 font-mono text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-accent/25 transition hover:bg-accent-hover dark:text-slate-950"
+            onClick={() => setMenuOpen(false)}
+          >
+            Book a call
+          </Link>
+        </nav>
       </div>
     </header>
   );

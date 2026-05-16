@@ -11,8 +11,8 @@ const links = [
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200/80 bg-surface py-12 dark:border-slate-800/80 dark:bg-slate-950">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
+      <div className="page-container">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-10">
           <div>
             <p className="font-display text-lg font-semibold text-foreground">
               Simple Software Solutions

@@ -23,22 +23,22 @@ const pains = [
 
 export default function SoundFamiliar() {
   return (
-    <section className="border-b border-slate-200/80 py-20 dark:border-slate-800/80 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="border-b border-slate-200/80 py-16 dark:border-slate-800/80 sm:py-20 lg:py-24 2xl:py-28">
+      <div className="page-container">
         <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent">
           Sound familiar?
         </p>
-        <h2 className="font-display mt-3 max-w-3xl text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h2 className="font-display mt-3 max-w-3xl text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
           Your roadmap doesn’t fit into an off-the-shelf template.
         </h2>
-        <p className="mt-4 max-w-2xl text-lg text-muted">
+        <p className="mt-4 max-w-2xl text-base text-muted sm:text-lg">
           If you’re racing to prove the business, this probably hits close to home.
         </p>
-        <ul className="mt-12 space-y-10">
+        <ul className="mt-10 space-y-8 sm:mt-12 sm:space-y-10">
           {pains.map((item) => (
             <li
               key={item.title}
-              className="max-w-3xl border-l-2 border-accent/40 pl-6 sm:pl-8"
+              className="max-w-3xl border-l-2 border-accent/40 pl-4 sm:pl-6 lg:pl-8"
             >
               <h3 className="font-semibold text-foreground">{item.title}</h3>
               <p className="mt-2 leading-relaxed text-muted">{item.body}</p>

@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Founder() {
   return (
-    <section className="border-b border-slate-200/80 bg-slate-50/90 py-20 dark:border-slate-800/80 dark:bg-slate-900/30 sm:py-24">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:grid-cols-2 sm:items-center sm:px-6 lg:px-8">
+    <section className="border-b border-slate-200/80 bg-slate-50/90 py-16 dark:border-slate-800/80 dark:bg-slate-900/30 sm:py-20 lg:py-24 2xl:py-28">
+      <div className="page-container grid gap-10 sm:grid-cols-2 sm:items-center sm:gap-12">
         <div>
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             Why Simple Software Solutions
           </p>
-          <h2 className="font-display mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-display mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
             Built for founders who need leverage, not theater.
           </h2>
           <p className="mt-4 leading-relaxed text-muted">
@@ -28,7 +28,7 @@ export default function Founder() {
             Start with a free call →
           </Link>
         </div>
-        <div className="rounded-2xl border border-slate-200/90 bg-surface p-8 shadow-lg dark:border-slate-700/80 dark:bg-slate-950/80">
+        <div className="rounded-2xl border border-slate-200/90 bg-surface p-6 shadow-lg sm:p-8 dark:border-slate-700/80 dark:bg-slate-950/80">
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-accent">
             Direct line
           </p>
@@ -41,7 +41,7 @@ export default function Founder() {
           </p>
           <Link
             href="mailto:info@simple-softwares.net"
-            className="mt-6 inline-block font-mono text-sm font-medium text-accent hover:underline"
+            className="mt-6 inline-block break-all font-mono text-sm font-medium text-accent hover:underline sm:break-normal"
           >
             info@simple-softwares.net
           </Link>
