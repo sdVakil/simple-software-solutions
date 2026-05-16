@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CalBookButton from "./CalBookButton";
 
 export default function ContactCTA() {
   return (
@@ -26,13 +27,10 @@ export default function ContactCTA() {
             next step is a short discovery sprint with tangible outputs you can keep.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="mailto:info@simple-softwares.net?subject=Free%20call%20%E2%80%94%20MVP"
-              className="inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3.5 font-mono text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-accent/30 ring-1 ring-white/20 transition hover:bg-accent-hover hover:shadow-accent/50 sm:max-w-none sm:w-auto dark:text-slate-950"
-            >
+            <CalBookButton className="inline-flex w-full max-w-sm cursor-pointer items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3.5 font-mono text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-accent/30 ring-1 ring-white/20 transition hover:bg-accent-hover hover:shadow-accent/50 sm:max-w-none sm:w-auto dark:text-slate-950">
               Book a free call
               <span aria-hidden>→</span>
-            </Link>
+            </CalBookButton>
           </div>
           <p className="mt-8 text-sm leading-relaxed text-slate-500">
             Prefer email first?{" "}

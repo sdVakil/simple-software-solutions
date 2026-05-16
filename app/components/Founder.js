@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CalBookButton from "./CalBookButton";
 
 export default function Founder() {
   return (
@@ -21,12 +22,9 @@ export default function Founder() {
             Small senior-led team, tight feedback loops, and documentation your
             next hire can actually use.
           </p>
-          <Link
-            href="#contact"
-            className="mt-8 inline-flex font-mono text-sm font-semibold uppercase tracking-wide text-accent hover:text-accent-hover"
-          >
+          <CalBookButton className="mt-8 inline-flex cursor-pointer font-mono text-sm font-semibold uppercase tracking-wide text-accent hover:text-accent-hover">
             Start with a free call →
-          </Link>
+          </CalBookButton>
         </div>
         <div className="rounded-2xl border border-slate-200/90 bg-surface p-6 shadow-lg sm:p-8 dark:border-slate-700/80 dark:bg-slate-950/80">
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-accent">

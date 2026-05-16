@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import CalBookButton from "./CalBookButton";
 
 const nav = [
   { href: "#build", label: "What we build" },
@@ -57,13 +58,12 @@ export default function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <Link
-            href="#contact"
-            className="hidden items-center justify-center rounded-lg bg-accent px-4 py-2 font-mono text-xs font-semibold uppercase tracking-wide text-white shadow-lg shadow-accent/25 ring-1 ring-white/20 transition hover:bg-accent-hover hover:shadow-accent/40 sm:inline-flex dark:ring-slate-950/30 dark:text-slate-950"
+          <CalBookButton
+            className="hidden cursor-pointer items-center justify-center rounded-lg bg-accent px-4 py-2 font-mono text-xs font-semibold uppercase tracking-wide text-white shadow-lg shadow-accent/25 ring-1 ring-white/20 transition hover:bg-accent-hover hover:shadow-accent/40 sm:inline-flex dark:ring-slate-950/30 dark:text-slate-950"
             onClick={() => setMenuOpen(false)}
           >
             Book a call
-          </Link>
+          </CalBookButton>
 
           <button
             type="button"
@@ -118,13 +118,12 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="#contact"
-            className="mt-2 inline-flex items-center justify-center rounded-lg bg-accent px-4 py-3 font-mono text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-accent/25 transition hover:bg-accent-hover dark:text-slate-950"
+          <CalBookButton
+            className="mt-2 inline-flex cursor-pointer items-center justify-center rounded-lg bg-accent px-4 py-3 font-mono text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-accent/25 transition hover:bg-accent-hover dark:text-slate-950"
             onClick={() => setMenuOpen(false)}
           >
             Book a call
-          </Link>
+          </CalBookButton>
         </nav>
       </div>
     </header>

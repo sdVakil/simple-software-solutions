@@ -1,4 +1,5 @@
 import { Roboto, Roboto_Mono } from "next/font/google";
+import CalEmbedInit from "./components/CalEmbedInit";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
       className={`${roboto.variable} ${robotoMono.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <CalEmbedInit />
         {children}
       </body>
     </html>

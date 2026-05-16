@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CalBookButton from "./CalBookButton";
 
 export default function Hero() {
   return (
@@ -26,13 +27,10 @@ export default function Hero() {
           </strong>
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-          <Link
-            href="#contact"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-mono text-sm font-semibold uppercase tracking-wide text-white shadow-xl shadow-accent/30 ring-1 ring-white/25 transition hover:bg-accent-hover hover:shadow-accent/50 sm:w-auto dark:text-slate-950 dark:ring-slate-950/20"
-          >
+          <CalBookButton className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-mono text-sm font-semibold uppercase tracking-wide text-white shadow-xl shadow-accent/30 ring-1 ring-white/25 transition hover:bg-accent-hover hover:shadow-accent/50 sm:w-auto dark:text-slate-950 dark:ring-slate-950/20">
             Book a free call
             <span aria-hidden>→</span>
-          </Link>
+          </CalBookButton>
           <Link
             href="#work"
             className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-slate-300/90 bg-surface-elevated px-6 py-3 font-mono text-sm font-semibold uppercase tracking-wide text-foreground shadow-sm backdrop-blur-sm transition hover:border-accent/50 hover:text-accent sm:w-auto dark:border-slate-600 dark:bg-slate-900/50 dark:hover:border-accent/40"
